@@ -97,6 +97,18 @@ current plugin status.
 Read through the `init.lua` file in your configuration folder for more
 information about extending and exploring Neovim.
 
+### Getting Started
+
+[The Only Video You Need to Get Started with Neovim](https://youtu.be/m8C0Cq9Uv9o)
+
+### Recommended Steps
+
+[Fork](https://docs.github.com/en/get-started/quickstart/fork-a-repo) this repo
+(so that you have your own copy that you can modify) and then install. You
+can install it on your machine using the methods above.
+
+> **NOTE**
+> Your fork's url will be something like this: `https://github.com/<your_github_username>/kickstart.nvim.git`
 
 #### Examples of adding popularly requested plugins
 
@@ -155,10 +167,6 @@ return {
 ```
 
 </details>
-
-### Getting Started
-
-[The Only Video You Need to Get Started with Neovim](https://youtu.be/m8C0Cq9Uv9o)
 
 ### FAQ
 
