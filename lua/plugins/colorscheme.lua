@@ -39,4 +39,7 @@ return {
       },
     },
   },
+  {
+    'xiyaowong/transparent.nvim'
+  }
 }
