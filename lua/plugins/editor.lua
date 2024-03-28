@@ -166,7 +166,24 @@ return {
       },
     },
   },
-  { 'tpope/vim-fugitive' },
+  { 'NvChad/nvim-colorizer.lua',
+    enable = false,
+    opts = {
+      filetypes = {
+        '*';
+        cmp_docs = {always_update = true},
+        cmp_menu = {always_update = true}
+      },
+      user_default_options = {
+        hsl_fn = true
+      }
+    },
+  },
+  { 'tpope/vim-fugitive',
+    config = function ()
+      vim.keymap.set("n", "<leader>gs", vim.cmd.Git, { silent = true, desc = "[G]it [S]tatus" })
+    end
+  },
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
@@ -177,13 +194,17 @@ return {
       -- Document existing key chains
       require('which-key').register {
         ['<leader>c'] = { name = '[C]ode', _ = 'which_key_ignore' },
-        ['<leader>d'] = { name = '[D]ocument', _ = 'which_key_ignore' },
         ['<leader>r'] = { name = '[R]ename', _ = 'which_key_ignore' },
         ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
         ['<leader>b'] = { name = '[B]uffer', _ = 'which_key_ignore' },
         ['<leader>n'] = { name = '[N]ew', _ = 'which_key_ignore' },
         ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
         ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+        ['<leader>u'] = { name = '[U]tils', _ = 'which_key_ignore' },
+        ['<leader>ut'] = { name = '[T]ypescript', _ = 'which_key_ignore' },
+        ['<leader>l'] = { name = '[L]SP', _ = 'which_key_ignore' },
+        ['<leader>ld'] = { name = '[L]SP [D]ocument', _ = 'which_key_ignore' },
+        ['<leader>X'] = { name = 'Diagnostics', _ = 'which_key_ignore'},
       }
     end,
   },
@@ -206,8 +227,8 @@ return {
           opts.buffer = bufnr
           vim.keymap.set(mode, l, r, opts)
         end
-        map('n', '<leader>ghp', ':Gitsigns preview_hunk<CR>', { desc = 'Preview hunk' })
-        map('n', '<leader>ghb', ':Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle current line git blame' })
+        map('n', '<leader>gp', ':Gitsigns preview_hunk<CR>', { desc = '[G]it Preview [H]unk' })
+        map('n', '<leader>gb', ':Gitsigns toggle_current_line_blame<CR>', { desc = 'Toggle current line [G]it [B]lame' })
       end,
     },
   },
