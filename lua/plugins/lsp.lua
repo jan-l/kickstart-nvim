@@ -108,8 +108,7 @@ return {
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-
-    require'lspconfig'.css_variables.setup{}
+      require('lspconfig').css_variables.setup {}
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
@@ -207,6 +206,8 @@ return {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
+        'prettierd', -- Used to format javascript, typescript, css, and more
+        'eslint_d', -- Used to lint javascript and typescript
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
